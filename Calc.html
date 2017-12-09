@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator2</title>
+	<style>
+		table {
+			width: 300px;
+			height: 400px;
+		}
+		tr {
+			width: 100%;
+			height: 12.5%;
+		}
+		td {
+			width:20%; 	
+		}
+		input {
+			width:100%;
+			height:100%; 
+		}
+	</style>
+</head>
+<body> 
+
+<table align="center"  border="1px">
+	<tr>
+		<td colspan="5"><input type="text" name="STR" size="20" value="" ></td>
+	</tr>
+	<tr>
+		<td colspan="5"><input type="text" name="STR" size="20" value="" ></td>
+	</tr>
+
+	<tr>
+		<td><input type="button" onclick="func(this);" value="MC" ></td>
+		<td><input type="button" onclick="func(this);" value="MR" ></td>
+		<td><input type="button" onclick="func(this);" value="MS" ></td>
+		<td><input type="button" onclick="func(this);" value="M+" ></td>
+		<td><input type="button" onclick="func(this);" value="M-" ></td>
+	</tr>
+	<tr>
+		<td><input type="button" onclick="func(this);" value="<--" ></td>
+		<td><input type="button" onclick="func(this);" value="CE" ></td>
+		<td><input type="button" onclick="func(this);" value="C" ></td>
+		<td><input type="button" onclick="func(this);" value="+-" ></td>
+		<td><input type="button" onclick="func(this);" value="v" ></td>
+	</tr>
+	<tr>
+		<td><input type="button" onclick="func(this);" value="7" ></td>
+		<td><input type="button" onclick="func(this);" value="8" ></td>
+		<td><input type="button" onclick="func(this);" value="9"></td>
+		<td><input type="button" onclick="func(this);" value="/" ></td>
+		<td><input type="button" onclick="func(this);" value="%"></td>
+	</tr>
+	<tr >
+		<td><input type="button" onclick="func(this);" value="4" ></td>
+		<td><input type="button" onclick="func(this);" value="5" ></td>
+		<td><input type="button" onclick="func(this);" value="6" ></td>
+		<td><input type="button" onclick="func(this);" value="*" ></td>
+		<td><input type="button" onclick="func(this);" value="1/x" ></td>
+	</tr>
+	<tr>
+		<td><input type="button"  onclick="func(this);" value="1" ></td>
+		<td><input type="button" onclick="func(this);" value="2" ></td>
+		<td><input type="button" onclick="func(this);" value="3" ></td>
+		<td><input type="button" onclick="func(this);" value="-" ></td>
+		<td rowspan="2"><input type="button" onclick="func(this);" value="=" ></td>
+	</tr>
+	<tr>
+		<td colspan="2"><input type="button" onclick="func(this);" value="0"  ></td>
+		<td><input type="button" onclick="func(this);" value="," ></td>
+		<td><input type="button" onclick="func(this);" value="+"></td>
+	</tr>
+
+</table>
+<script>
+
+var mass_inp = document.getElementsByName('STR');
+var buff = 0;
+var flag = false;
+
+	function func (obj) {
+		console.log(obj.value);
+
+		if (obj.value >= 0 && obj.value <= "9") {
+			mass_inp[1].value += obj.value;
+        		//alert(obj.value);	
+		}
+		else {
+             		switch (obj.value)  {
+             		case "CE":
+               			console.log(obj.value);
+					break;
+
+			case "C":
+               			console.log(obj.value);
+					break;
+
+			case "+":
+				mass_inp[0].value += mass_inp[1].value + " +";
+				buff = mass_inp[1].value;
+				mass_inp[1].value = 0;
+				break;
+
+			default:
+                     console.log(obj.value);
+					 break;
+             }
+		}
+
+	}
+</script>
+
+</body>
+</html>
